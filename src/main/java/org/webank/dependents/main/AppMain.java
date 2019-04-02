@@ -21,7 +21,6 @@ public class AppMain {
 				String data = AppService.meger(dataList);
 				String result = AppService.buildResultWithLicense(data);
 				AppService.outPutResult(result, OUTPUT_FIX + fileName);
-				System.out.println(result);
 			}
 		}
 	}

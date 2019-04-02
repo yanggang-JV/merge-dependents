@@ -1,0 +1,1 @@
+cd buildGradleFile & gradle dependencies >> ../dependents/dependents.txt
