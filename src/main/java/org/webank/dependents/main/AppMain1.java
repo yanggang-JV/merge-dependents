@@ -28,7 +28,7 @@ public class AppMain1 {
 	    int v = 0;
 	    int count = 0;
 	    while (true) {
-	        Thread.sleep(100);
+	        Thread.sleep(500);
 	        int value = fis.available();
 	        if (value - v == 0) {
 	            count++;
