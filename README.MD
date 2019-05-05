@@ -10,7 +10,7 @@
 
 ### 使用方式二:
 1. 将您的build.gradle文件放入文件夹buildGradleFile中。
-2. 执行AppMain1方法 （此步骤可能较慢，需要循环到maven中央仓库爬数据）。
+2. 执行AppMain1方法或者执行start.bat（此步骤可能较慢，需要循环到maven中央仓库爬数据）。
 3. 查看output输出结果。
 
 注: 默认生成的文件名为: dependents.txt & license-dependents.txt
