@@ -1,6 +1,7 @@
 package org.webank.dependents.service;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -19,7 +20,8 @@ public class AppService {
 		BufferedReader bis = null;
 		List<String> dataList = new ArrayList<String>();
 		try {
-			bis = new BufferedReader(new InputStreamReader(new FileInputStream(filePath), StandardCharsets.UTF_8));
+	        File file = new File(filePath);
+			bis = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
 			String line = null;
 
 			while ((line = bis.readLine()) != null) {
@@ -45,7 +47,7 @@ public class AppService {
 		return dataList;
 	}
 
-	public static String meger(List<String> dataList) throws Exception {
+	public static String meger(List<String> dataList) {
 
 		List<NodeObject> nodeList = new ArrayList<NodeObject>();
 		// 解析根节点

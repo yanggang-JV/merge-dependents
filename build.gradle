@@ -15,8 +15,31 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
 }
-
+version = "1.0.0"
 dependencies {
     compile group: 'org.jsoup', name: 'jsoup', version: '1.11.3'
 }
 
+//生成的jar包包名和版本
+jar {
+    destinationDir file('dist/app')
+    archiveName project.name + '-' + version + '.jar'
+    
+    doFirst {
+   		exclude '/*.*'
+    }
+    
+    doLast {
+        copy {
+            from configurations.compile
+            into 'dist/lib'
+        }
+    }
+}
+
+build {
+    doLast {
+        delete "dist/app/" + project.name + ".jar"
+        file("dist/app/" + project.name + ".jar.original").renameTo("dist/app/" + project.name + ".jar")
+    }
+}

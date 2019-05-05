@@ -1,1 +1,1 @@
-cd buildGradleFile & gradle dependencies >> ../dependents/dependents.txt
+gradle clean & gradle build & cd buildGradleFile  & gradle dependencies >> ../dependents/dependents.txt & cd .. & java -classpath dist/app/*;dist/lib/* org.webank.dependents.main.AppMainBat
