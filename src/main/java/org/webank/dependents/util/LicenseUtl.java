@@ -60,7 +60,7 @@ public class LicenseUtl {
 
 			HttpURLConnection connection = null;
 			if (proxy != null) {
-				connection = (HttpURLConnection) url.openConnection();
+				connection = (HttpURLConnection) url.openConnection(proxy);
 			} else {
 				connection = (HttpURLConnection) url.openConnection();
 			}
