@@ -72,12 +72,13 @@ public class LicenseUtl {
 				((HttpsURLConnection) connection).setSSLSocketFactory(sc.getSocketFactory());
 				((HttpsURLConnection) connection).setHostnameVerifier(new TrustAnyHostnameVerifier());
 			}
-
 			connection.setConnectTimeout(CONNECT_TIMEOUT);
 			connection.setReadTimeout(READ_TIMEOUT);
+			connection.setRequestProperty("X-Forwarded-For", IpUtil.getRandomIp());
 			connection.setRequestProperty("accept", "*/*");
 			connection.setRequestProperty("connection", "Keep-Alive");
 			connection.setRequestProperty("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1;SV1)");
+			connection.setUseCaches(false);
 			connection.connect();
 
 			int code = connection.getResponseCode();
@@ -217,6 +218,6 @@ public class LicenseUtl {
 	}
 
 	public static void main(String[] args) throws Exception {
-		System.out.println(getLicense("org.xmlunit/xmlunit-core/2.6.2"));
+		System.out.println(getLicense("jaxen/jaxen/1.1.6"));
 	}
 }
